@@ -1,23 +1,20 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { showErrorMessage, showInfoMessage, showSuccessMessage, showWarningMessage } from './helpers/exceptionUtils';
+import './static/css/App.css';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          Test some notifications
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+
+        <button onClick={() => showInfoMessage("This is an info message", "here is the subtext! look how nice it is")}>Show Info</button><br />
+        <button onClick={() => showErrorMessage("This is an error message", "here is the subtext! look how nice it is")}>Show Error</button><br />
+        <button onClick={() => showSuccessMessage("This is a success message", "here is the subtext! look how nice it is")}>Show Success</button><br />
+        <button onClick={() => showWarningMessage("This is an warning message", "here is the subtext! look how nice it is")}>Show Warning</button><br />
+
       </header>
     </div>
   );
